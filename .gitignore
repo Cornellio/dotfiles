@@ -1,0 +1,9 @@
+.tmp
+.cache
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trash*
+.sublime*
+Thumbs.db

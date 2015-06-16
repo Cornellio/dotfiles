@@ -8,6 +8,8 @@ set ts=2
 "set ts=4
 set smartindent
 set expandtab
+set softtabstop=2
+set shiftwidth=2
 
 " Syntax
 syntax on
@@ -22,4 +24,33 @@ set list listchars=tab:>·,trail:·
 " Keyboard remapping
 " map <F1> <Esc>
 " imap <F1> <Esc>
+
+" turn off auto adding comments on next line
+" so you can cut and paste reliably
+" http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table
+set fo=tcq
+set nocompatible
+set modeline
+set bg=light
+
+" set default comment color to cyan instead of darkblue
+" which is not very legible on a black background
+" highlight comment ctermfg=cyan
+
+highlight LiteralTabs ctermbg=darkgreen guibg=darkgreen
+match LiteralTabs /\s\	/
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$/
+
+" Show ruler
+set ruler
+
+" Set up puppet manifest and spec options
+au BufRead,BufNewFile *.pp
+  \ set filetype=puppet
+au BufRead,BufNewFile *_spec.rb
+  \ nmap <F8> :!rspec --color %<CR>
+
+" Enable indentation matching for =>'s
+filetype plugin indent on
 

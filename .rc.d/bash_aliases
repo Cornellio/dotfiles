@@ -1,0 +1,75 @@
+# su commands:
+
+alias su='su -m'
+alias sudoi='sudo -E bash'
+
+# ls commands:
+
+alias l='clear && pwd && ls -FGlh'
+alias lt='l -tr'
+alias la='l -a'
+alias u='cd .. && l'
+alias ..='cd .. && l'
+alias ...='cd ../../.. && l'
+alias ....=' cd ../../../.. && l'
+
+# History commands:
+
+alias h='clear && history'
+alias h.='clear && history 10'
+alias h..='clear && history 20'
+alias h...='clear && history 30'
+alias c='clear'
+
+# Daemon Control:
+
+alias dm='sudo /sbin/service'
+alias dmls='sudo /sbin/service --status-all'
+
+alias etc='clear && cd /etc'
+alias init.d='clear && cd /etc/init.d'
+alias a='clear && alias -p'
+
+# Puppet commands:
+
+alias puppet='sudo /usr/local/bin/puppet'
+alias "puppet-dev"='sudo /usr/local/bin/puppet agent -t --environment=development'
+alias "puppet-test"='sudo /usr/local/bin/puppet agent -t --environment=testing'
+alias "puppet-prod"='sudo /usr/local/bin/puppet agent -t --environment=production'
+
+# Colorize grep output
+
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# Filesystem commands
+
+alias mkdir='mkdir -pv'
+alias mount='mount | column -t'
+
+alias path='echo -e ${PATH//:/\\n}'
+alias now='date +%T'
+alias nowdate='date +"%d-%m-%Y"'
+
+# vi commands
+
+alias vi=vim
+alias visudo='sudo vi'
+alias edit='vim'
+
+alias ports='netstat -tulanp'
+
+# get web server headers
+alias header='curl -I'
+
+# Resources
+
+alias psmem='echo -e "\nUSER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND\n" ; ps auxf | tail -n+2 | sort -nr -k 4'
+alias psmem10="psmem | head -n 10"
+
+alias pscpu='echo -e "\nUSER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND\n" ; ps auxf | tail -n+2 | sort -nr -k 3'
+alias pscpu10="psmem | head -n 10"
+
+alias meminfo='free -m -l -t'
+

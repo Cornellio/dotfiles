@@ -1,0 +1,1 @@
+[ -f ~/.screenrc ] || ln -s ~/.rc.d/.screenrc ~/.screenrc

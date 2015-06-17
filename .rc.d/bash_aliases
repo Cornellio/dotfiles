@@ -73,3 +73,7 @@ alias pscpu10="psmem | head -n 10"
 
 alias meminfo='free -m -l -t'
 
+# Misc
+
+alias pe-certs='ssh admin04 -t "sudo /usr/local/bin/puppet cert list --all | sed s/\(SHA256\).*//g | grep -v pe-internal"'
+

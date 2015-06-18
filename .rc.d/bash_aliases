@@ -12,6 +12,7 @@ alias u='cd .. && l'
 alias ..='cd .. && l'
 alias ...='cd ../../.. && l'
 alias ....=' cd ../../../.. && l'
+alias a='alias -p'
 
 # History commands:
 
@@ -36,6 +37,7 @@ alias puppet='sudo /usr/local/bin/puppet'
 alias "puppet-dev"='sudo /usr/local/bin/puppet agent -t --environment=development'
 alias "puppet-test"='sudo /usr/local/bin/puppet agent -t --environment=testing'
 alias "puppet-prod"='sudo /usr/local/bin/puppet agent -t --environment=production'
+alias "puppet-certs"='ssh -t admin04-sc9 "sudo /usr/local/bin/puppet cert list --all | sed s/\(SHA256\).*//g | grep -v pe-internal"'
 
 # Colorize grep output
 
@@ -55,7 +57,6 @@ alias nowdate='date +"%d-%m-%Y"'
 # vi commands
 
 alias vi=vim
-alias visudo='sudo vi'
 alias edit='vim'
 
 alias ports='netstat -tulanp'
@@ -72,8 +73,3 @@ alias pscpu='echo -e "\nUSER       PID %CPU %MEM    VSZ   RSS TTY      STAT STAR
 alias pscpu10="psmem | head -n 10"
 
 alias meminfo='free -m -l -t'
-
-# Misc
-
-alias pe-certs='ssh admin04 -t "sudo /usr/local/bin/puppet cert list --all | sed s/\(SHA256\).*//g | grep -v pe-internal"'
-

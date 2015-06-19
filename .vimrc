@@ -1,12 +1,12 @@
 " Prettify
 set number
 "color evening
-color elflord
+"color elflord
 
 " Tabbing
 set ts=2
-"set ts=4
 set smartindent
+set autoindent
 set expandtab
 set softtabstop=2
 set shiftwidth=2
@@ -31,11 +31,10 @@ set list listchars=tab:>·,trail:·
 set fo=tcq
 set nocompatible
 set modeline
-set bg=light
 
 " set default comment color to cyan instead of darkblue
 " which is not very legible on a black background
-" highlight comment ctermfg=cyan
+highlight comment ctermfg=cyan
 
 highlight LiteralTabs ctermbg=darkgreen guibg=darkgreen
 match LiteralTabs /\s\	/
@@ -46,11 +45,10 @@ match ExtraWhitespace /\s\+$/
 set ruler
 
 " Set up puppet manifest and spec options
-au BufRead,BufNewFile *.pp
+autocmd BufRead,BufNewFile *.pp
   \ set filetype=puppet
-au BufRead,BufNewFile *_spec.rb
+autocmd BufRead,BufNewFile *_spec.rb
   \ nmap <F8> :!rspec --color %<CR>
 
 " Enable indentation matching for =>'s
 filetype plugin indent on
-

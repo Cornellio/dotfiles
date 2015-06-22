@@ -3,13 +3,14 @@ set number
 "color evening
 "color elflord
 
-" Tabbing
+" Indentation
 set ts=2
 set smartindent
 set autoindent
 set expandtab
 set softtabstop=2
 set shiftwidth=2
+set smarttab
 
 " Syntax
 syntax on

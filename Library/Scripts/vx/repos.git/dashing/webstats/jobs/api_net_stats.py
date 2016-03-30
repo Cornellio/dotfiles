@@ -100,7 +100,7 @@ def get_http_connection_count(server, username, identity_file, cmd):
     return len_http_established_cx
 
 
-def get_http_connection_sum(servers, username, identity_file):
+def get_sum_http_established_cx(servers, username, identity_file):
 
     '''
     Cycle through API servers,
@@ -239,9 +239,8 @@ def main():
     print "historyfile", historyfile
     ##
 
-    HEADER = "# Time, Established Connections"
-
     # Create log file if it doesn't exist and write header
+    HEADER = "# Time, Established Connections"
     with open(historyfile, 'r+') as f:
         line = f.readline()
         if not line.startswith('#'):
@@ -251,12 +250,13 @@ def main():
     # Call functions
     #
 
-    save_values(get_http_connection_sum(servers, ssh_username, ssh_identity_file), historyfile)
+    sum_http_established_cx = get_sum_http_established_cx(servers, ssh_username, ssh_identity_file)
+    save_values(sum_http_established_cx, historyfile)
+
     ##
     sys.exit(0)
     ##
 
-    save_values(sum_http_established_cx)
 
     stat_values = tail_history(num_recs, stat)
     transmit_values(stat_values, target_widget)

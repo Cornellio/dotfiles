@@ -1,0 +1,13 @@
+#!/bin/bash
+
+ln_opts=""
+if [[ $* =~ "-f" ]]; then
+  ln_opts+="-f"
+fi
+
+dot_files_target=~/.dot_files
+dot_files_to_link=".bashrc .screenrc .vim .vimrc"
+
+for file in $dot_files_to_link; do
+  ln -s $ln_opts ${dot_files_target}/${file} ~
+done

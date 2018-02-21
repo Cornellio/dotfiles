@@ -3,7 +3,7 @@ set number
 "color evening
 "color elflord
 
-" Indentation
+" Indentation / tab spacing
 set ts=2
 set smartindent
 set autoindent
@@ -14,7 +14,7 @@ set smarttab
 
 " Syntax
 syntax on
-set syntax=shell
+" set syntax=shell
 
 " Ignores
 set wildignore+=*.class
@@ -53,3 +53,12 @@ autocmd BufRead,BufNewFile *_spec.rb
 
 " Enable indentation matching for =>'s
 filetype plugin indent on
+
+" Code folding
+set foldmethod=indent
+set foldnestmax=10
+set foldlevel=1
+
+set wildmode=list:longest
+set wildmenu
+

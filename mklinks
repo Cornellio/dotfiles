@@ -1,4 +1,6 @@
 #!/bin/bash
+#
+# Create links to select dot files in ~/.dot_files at ~
 
 ln_opts=""
 if [[ $* =~ "-f" ]]; then

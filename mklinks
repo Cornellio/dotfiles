@@ -2,13 +2,19 @@
 #
 # Create links to select dot files in ~/.dot_files at ~
 
+dot_files_to_link=".bashrc \
+  .screenrc \
+  .vim \
+  .vimrc \
+  .config"
+
+dot_files_target=~/.dot_files
+
+# force linking when run with -f
 ln_opts=""
 if [[ $* =~ "-f" ]]; then
   ln_opts+="-f"
 fi
-
-dot_files_target=~/.dot_files
-dot_files_to_link=".bashrc .screenrc .vim .vimrc"
 
 for file in $dot_files_to_link; do
   ln -sf $ln_opts ${dot_files_target}/${file} ~

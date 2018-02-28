@@ -7,6 +7,10 @@ fi
 
 # User specific aliases and functions
 
+# Server SSH
+alias linode='ssh scclinode'
+
+# Directory access
 alias code='cd ~/code'
 alias code.py='cd ~/code/python'
 alias code.pp='cd ~/code/puppet'
@@ -14,6 +18,7 @@ alias code.puppet='code.pp'
 alias code.sh='cd ~/code/bash'
 alias repos='cd ~/code/repos'
 
+# ls behavior
 alias l='clear && ls -FGlh'
 alias lt='l -tr'
 alias la='l -a'

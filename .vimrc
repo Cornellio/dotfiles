@@ -2,7 +2,7 @@
 execute pathogen#infect()
 
 " Prettify
-set number
+set nonumber
 "color evening
 "color elflord
 

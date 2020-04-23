@@ -3,10 +3,10 @@ execute pathogen#infect()
 
 " Prettify
 set nonumber
-"color evening
+color evening
 "color elflord
 
-" Indentation
+" Tabbing
 set ts=2
 set smartindent
 set autoindent
@@ -56,4 +56,3 @@ autocmd BufRead,BufNewFile *_spec.rb
 
 " Enable indentation matching for =>'s
 filetype plugin indent on
-

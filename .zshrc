@@ -2,6 +2,8 @@
 bindkey "^[[w" backward-word
 bindkey "^X\\x7f" backward-kill-line
 
+plugins=(git kubectl brew osx terraform docker)
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -66,8 +68,6 @@ COMPLETION_WAITING_DOTS="true"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-
-plugins=(git kubectl brew osx terraform)
 
 source $ZSH/oh-my-zsh.sh
 
